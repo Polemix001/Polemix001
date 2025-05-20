@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polemix - Concreto de Qualidade</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: #004d99;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h2 {
+      color: #004d99;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #ffcc00;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .services-list, .products-list {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .service-item, .product-item {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex: 1 1 250px;
+      text-align: center;
+    }
+    .service-item h3, .product-item h3 {
+      margin-top: 0;
+      color: #004d99;
+    }
+    footer {
+      background: #002d5c;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+    }
+    form {
+      max-width: 500px;
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    button {
+      background: #004d99;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #003366;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Polemix</h1>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section id="sobre">
+    <h2>Sobre a Polemix</h2>
+    <p>A Polemix é uma empresa líder em soluções de concreto, oferecendo qualidade e confiança para seus projetos. Com anos de experiência no mercado, entregamos produtos com alta performance e atendimento especializado.</p>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <div class="services-list">
+      <div class="service-item">
+        <h3>Concreto Usinado</h3>
+        <p>Fornecimento de concreto usinado pronto para uso, com controle de qualidade rigoroso.</p>
+      </div>
+      <div class="service-item">
+        <h3>Consultoria Técnica</h3>
+        <p>Orientação especializada para garantir o melhor desempenho do concreto no seu projeto.</p>
+      </div>
+      <div class="service-item">
+        <h3>Entrega Rápida</h3>
+        <p>Logística eficiente para garantir que o concreto chegue sempre no tempo certo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="produtos">
+    <h2>Produtos</h2>
+    <div class="products-list">
+      <div class="product-item">
+        <h3>Concreto Resistente</h3>
+        <p>Alta resistência para estruturas duráveis e seguras.</p>
+      </div>
+      <div class="product-item">
+        <h3>Concreto Leve</h3>
+        <p>Ideal para projetos que precisam de redução de peso sem perder qualidade.</p>
+      </div>
+      <div class="product-item">
+        <h3>Concreto Decorativo</h3>
+        <p>Acabamento estético para obras com design diferenciado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form id="contactForm" action="#" method="POST" onsubmit="return enviarFormulario(event)">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 Polemix - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  function enviarFormulario(event) {
+    event.preventDefault();
+    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+    document.getElementById('contactForm').reset();
+    return false;
+  }
+</script>
+
+</body>
+</html>
